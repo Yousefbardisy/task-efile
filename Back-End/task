@@ -1,0 +1,14 @@
+
+Create an MEAN Stack application for contact numbers online
+
+ 
+o	with server pagination (page of 5 contacts)
+
+o	Add columns filters to the grid
+
+
+•	If a user edits a contact this contact should appear to other users as locked (without need to refresh)
+
+•	Upload the project to GitHub and share the link with us
+
+u1 c1 != u2 edit

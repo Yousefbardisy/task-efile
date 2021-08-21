@@ -1,0 +1,9 @@
+<div class="container">
+    <h4>Add New Contact:</h4>
+    <input type="text" [(ngModel)]="newContact.name" placeholder="name">
+    <input type="text" [(ngModel)]="newContact.phone" placeholder="phone">
+    <input type="text" [(ngModel)]="newContact.address" placeholder="address">
+    <input type="text" [(ngModel)]="newContact.notes" placeholder="notes">
+    <button class="btn btn-success m-2" (click)="save(newContact)">ADD</button>
+    <button class="btn btn-secondary m-2" (click)="cancel()">Cancel</button>
+</div>

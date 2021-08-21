@@ -1,0 +1,9 @@
+<div class="container">
+    <h4>Edit Contact:</h4>
+    <input type="text" [(ngModel)]="editContact!.name">
+    <input type="text" [(ngModel)]="editContact!.phone">
+    <input type="text" [(ngModel)]="editContact!.address">
+    <input type="text" [(ngModel)]="editContact!.notes">
+    <button class="btn btn-outline-success mx-2" (click)="save(editContact)">save</button>
+    <button class="btn btn-outline-secondary" (click)="hideEdit()">Cancel</button>
+</div>

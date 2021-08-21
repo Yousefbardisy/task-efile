@@ -1,0 +1,47 @@
+<div class="table-responsive" *ngIf="contacts; else NoData">
+<table class="table table-dark table-hover table-bordered">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Notes</th>
+            <th>action</th>
+            <th>filter by name:<div class="input-group">
+                <div class="form-outline">
+                    <input type="text" placeholder=" Name"[value]='name' (keyup)="filterCo($event)">
+                </div>
+                <button type="button" class="btn btn-primary" (click)="filter()">
+                    <i class="fas fa-search"></i>
+                  </button>
+                              </div></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let contact of contacts | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength }">
+            <td>{{contact.name}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.address}}</td>
+            <td>{{contact.notes}}</td>
+            <td> 
+               <button class="btn btn-danger" (click)="delete(contact._id)">Delete</button>
+               <button class="btn btn-warning mx-2" (click)="showEdit(contact)">Edit</button>
+            </td>
+            <td>{{contact.notes}}</td>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
+<!-- <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+</div> -->
+
+<button class="btn btn-primary" (click)="showAdd()">Add Contact</button>
+<app-contact-edit *ngIf="eFlag" [editContact]="contact" (editCanceled)="hideEdit($event)"></app-contact-edit>
+<app-contact-add *ngIf="addFlag" (addCanceled)="hideAdd($event)"></app-contact-add>
+</div>
+<ng-template #NoData>
+    <h1>Loading Data....</h1>
+  </ng-template>
