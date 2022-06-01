@@ -9,7 +9,7 @@ export class ContactService {
 
   constructor(private MyClient:HttpClient) { }
 
-  baseUrl = "http://localhost:8000/api/v1/contact";
+  baseUrl = "http://localhost:8080/api/v1/contact";
   listChangedEvent: EventEmitter<Contact[]> = new EventEmitter();
 
 
